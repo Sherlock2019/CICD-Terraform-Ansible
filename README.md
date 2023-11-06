@@ -1,15 +1,4 @@
-# CICD-Terraform-Ansible
-CiCd github actions using IAC ansible Terraform for deployment
- scenario that integrates Ansible, Ansible Tower, and Terraform within a company's operations:
 
-    Company Profile:
-
--   Name:   TechSolutions Inc.
--   Industry:   Software Development and IT Services
--   Infrastructure:   Hybrid Cloud (AWS and On-Premises Data Centers)
--   Current Setup:   Infrastructure as Code (IaC) managed with Terraform for provisioning. Need for configuration management and automation for deployment and operations.
-
-    Scenario:
 
 TechSolutions Inc. has been using Terraform to successfully provision their cloud and on-premises infrastructure. However, as their operations have grown, they've encountered challenges with configuration management, application deployment, and operational tasks across their diverse environments.
 
@@ -19,10 +8,20 @@ They need a solution that can:
 2. Automate application deployments.
 3. Orchestrate complex operational workflows.
 4. Provide role-based access control and auditing capabilities.
+CiCd github actions using IAC ansible Terraform for deployment
+ scenario that integrates Ansible, Ansible Tower, and Terraform within a company's operations:
+
+    Company Profile:
+
+-   Industry:   Software Development and IT Services
+-   Infrastructure:   Hybrid Cloud (AWS and On-Premises Data Centers)
+-   Current Setup:   Infrastructure as Code (IaC) managed with Terraform for provisioning. Need for configuration management and automation for deployment and operations.
+
+
 
     Solution:
 
-   # Ansible:
+   # Ansible: CICD-Terraform-Ansible project 
 
 -   Role:   Configuration Management and Application Deployment
 -   Use Case:  
