@@ -24,6 +24,20 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'us-west-2'
 
+      - name: Terraform Output to JSON
+        run: |
+          terraform output -json > inventory.json
+        id: terraform_output
+
+      - name: Create Ansible Inventory
+        run: |
+          echo "[webserver]" > ansible_inventory
+          echo "$(jq -r '.instance_ip.value' inventory.json) ansible_ssh_user=ubuntu ansible_ssh_private_key_file=${{ secrets.SSH_PRIVATE_KEY }}" >> ansible_inventory
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      
+      
       - name: Configure EC2 with Ansible
         run: |
           ansible-playbook -i terraform-inventory ansible/playbook.yml
